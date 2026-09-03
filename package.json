@@ -1,0 +1,16 @@
+{
+  "name": "coolors-clone-project",
+  "version": "3.1.0",
+  "description": "Clon educativo de coolors.co para practicar JavaScript, DOM y UI. Proyecto de práctica sin fines de lucro.",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "author": "Jesús Cedeño Vélez",
+  "dependencies": {
+    "astro": "^7.2.10"
+  }
+}
