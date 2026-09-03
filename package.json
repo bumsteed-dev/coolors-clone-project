@@ -1,6 +1,6 @@
 {
   "name": "coolors-clone-project",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Clon educativo de coolors.co para practicar JavaScript, DOM y UI. Proyecto de práctica sin fines de lucro.",
   "private": true,
   "scripts": {
