@@ -24,7 +24,7 @@ Este proyecto **no busca**:
 
 ## Hoja de ruta
 
-Ruta de implementación sugerida en [`docs/ruta-colorya.md`](docs/ruta-colorya.md), pensada para ir agregando funcionalidad de forma incremental:
+Ruta de implementación sugerida en [`docs/hoja-de-ruta.md`](docs/hoja-de-ruta.md), pensada para ir agregando funcionalidad de forma incremental:
 
 | # | Funcionalidad | Estado |
 |---|---|---|
@@ -53,7 +53,7 @@ Ruta de implementación sugerida en [`docs/ruta-colorya.md`](docs/ruta-colorya.m
 ```
 coolors-clone-project/
 ├── docs/
-│   ├── ruta-colorya.md       # Ruta de implementación sugerida
+│   ├── hoja-de-ruta.md       # Ruta de implementación sugerida
 │   └── teoria-del-color.md   # Teoría del color y espacio HSL
 ├── public/
 │   └── app.js                # Lógica principal (generación de color, contraste, eventos)
@@ -78,7 +78,7 @@ pnpm preview   # previsualizar el build
 ## Documentación adicional
 
 - [`docs/teoria-del-color.md`](docs/teoria-del-color.md) — por qué un color/paleta "se ve bien", el espacio HSL y armonía de colores.
-- [`docs/ruta-colorya.md`](docs/ruta-colorya.md) — orden recomendado para ir agregando funcionalidades.
+- [`docs/hoja-de-ruta.md`](docs/hoja-de-ruta.md) — orden recomendado para ir agregando funcionalidades.
 
 ## Contribuciones
 
