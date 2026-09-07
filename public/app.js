@@ -1,5 +1,7 @@
 const btnRandom = document.querySelector(".btn-random");
 const colorColumn = document.querySelectorAll(".color");
+const btnCopy = document.querySelectorAll(".color-copy");
+const badgeCopy = document.querySelector(".copy-clipboard-ready");
 
 const generateColor = () => {
   const digits = "0123456789ABCDEF";
@@ -9,7 +11,7 @@ const generateColor = () => {
     const index = Math.floor(Math.random() * digits.length);
     hex += digits[index];
   }
-  return `#${hex}`;
+  return `${hex}`;
 };
 
 const getContrast = (hex) => { 
@@ -21,14 +23,16 @@ const getContrast = (hex) => {
   return luminancia >= 128 ? "#000000" : "#FFFFFF";
 }
 
-
 const initColor = () => {
   colorColumn.forEach((color) => {
     const colorHex = generateColor();
-    color.style.backgroundColor = colorHex;
+    color.style.backgroundColor = `#${colorHex}`;
     const colorCode = color.querySelector('.color_code');
     colorCode.textContent = colorHex;
     colorCode.style.color = getContrast(colorHex);
+
+    const colorCodeIcon = color.querySelector(".color-icons");
+    colorCodeIcon.style.color = `${getContrast(colorHex)}CC`;
   });
 };
 
@@ -40,4 +44,18 @@ window.addEventListener('keydown', (e) => {
   if (e.code === 'Space') {
     initColor();
   }
+});
+
+colorColumn.forEach((color) => { 
+  const btnCopyColor = color.querySelector(".color-copy");
+
+  btnCopyColor.addEventListener('click', (e) => {
+    const colorCode = color.querySelector('.color_code');
+    navigator.clipboard.writeText(`#${colorCode.textContent}`);
+    badgeCopy.classList.add("is-visible");
+
+    setTimeout(() => {
+      badgeCopy.classList.remove("is-visible");
+    }, 2000);
+  });
 });

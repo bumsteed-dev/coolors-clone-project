@@ -2,6 +2,8 @@
 import Analytics from "@vercel/analytics/astro";
 import RandonButton from "../components/RandonButton.astro";
 import SpaceBarButton from "../components/SpaceBarButton.astro";
+import IconCopy from "../icons/IconCopy.astro";
+import CopyCipboardReady from "../components/CopyCipboardReady.astro";
 const cantidad = 5;
 const columnas = Array.from({ length: cantidad });
 ---
@@ -14,39 +16,47 @@ const columnas = Array.from({ length: cantidad });
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <title>Colorya — Coolors Clone Project (práctica de JS/DOM)</title>
   </head>
   <body id="body" class="body">
+    <CopyCipboardReady />
     <div class="main_container">
-      <div class="controls">
-        <RandonButton />
-        <SpaceBarButton />
-      </div>
       <div class="column_colors">
         {
           columnas.map(() => (
             <div class="color">
+              <div class="color-icons">
+                <span class="color-copy">
+                  <IconCopy class="icon-color" size={24} />
+                </span>
+              </div>
               <p class="color_code" />
             </div>
           ))
         }
       </div>
+      <div class="controls">
+        <RandonButton />
+        <SpaceBarButton />
+      </div>
     </div>
+
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Rethink Sans", sans-serif;
+        font-family: "Inter Tight", sans-serif;
       }
 
       body {
         height: 100vh;
         width: 100%;
         border-radius: 20px;
+        position: relative;
       }
 
       .main_container {
@@ -63,25 +73,42 @@ const columnas = Array.from({ length: cantidad });
       }
 
       .color {
+        padding-bottom: 70px;
         flex: 1;
         height: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
+        gap: 50px;
+      }
+
+      .color-icons {
+        display: none;
+        color:;
+      }
+
+      .color:hover .color-icons {
+        display: block;
+        cursor: pointer;
+      }
+
+      .icon-color {
+        cursor: pointer;
       }
 
       .color_code {
-        font-size: 40px;
+        font-size: 35px;
       }
 
       .controls {
         padding: 10px 30px;
         display: flex;
         gap: 10px;
+        display: none;
       }
 
       @media screen and (max-width: 768px) {
-
         body {
           height: 100dvh;
           overflow-x: hidden;
@@ -99,15 +126,26 @@ const columnas = Array.from({ length: cantidad });
           background-color: #123abc;
           flex: 1;
           height: 100%;
-          margin: 5px;
-          border-radius: 10px;
           display: flex;
+          flex-direction: row-reverse;
           align-items: center;
-          justify-content: center;
+          justify-content: space-between;
+          padding: 30px;
+        }
+
+        .color-icons {
+          display: block;
         }
 
         .color_code {
-          font-size: 30px;
+          font-size: 25px;
+        }
+
+        .controls {
+          padding: 10px;
+          display: flex;
+          gap: 10px;
+          display: block;
         }
       }
     </style>

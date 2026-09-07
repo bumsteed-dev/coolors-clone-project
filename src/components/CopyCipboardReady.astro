@@ -1,0 +1,41 @@
+---
+import IconCheckCircle from "../icons/IconCheckCircle.astro";
+---
+
+<div class="copy-clipboard-ready">
+  <IconCheckCircle />
+  Color copied to the clipboard!
+</div>
+
+<style>
+  .copy-clipboard-ready {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1e1e24;
+    padding: 14px 20px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    color: #dee5e5;
+    font-size: 18px;
+    width: max-content;
+    white-space: nowrap;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+  }
+
+  .copy-clipboard-ready.is-visible {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .copy-clipboard-ready {
+      bottom: 70px;
+      font-size: 16px;
+    }
+  }
+</style>
