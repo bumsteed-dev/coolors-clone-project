@@ -1,0 +1,106 @@
+---
+import IconChevronDown from "../icons/IconChevronDown.astro";
+---
+
+<div class="header">
+  <div class="header-logo">colorya</div>
+  <div class="header-shortcuts">
+    <div class="header-st-left">
+      <div class="header-st-tool">
+        Tools<span> <IconChevronDown /> </span>
+      </div>
+      <div class="header-st-gp">
+        <span>Go Pro</span>
+      </div>
+    </div>
+    <div class="header-divider"></div>
+    <div class="header-st-right">
+      <button class="header-st-si">
+        <span>Sign In</span>
+      </button>
+      <button class="header-st-su">
+        <span>Sign Up</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  span {
+    @include flex-center;
+  }
+
+  .header {
+    height: 60px;
+    padding: 0px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-logo {
+    font-family: "Urbanist", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1b4de1;
+  }
+
+  .header-shortcuts {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-st-left {
+    display: flex;
+    gap: 15px;
+  }
+
+  .header-st-tool {
+    @include flex-center;
+    gap: 5px;
+  }
+
+  .header-st-gp {
+    color: #ec4899;
+  }
+
+  .header-divider {
+    width: 1px;
+    background-color: rgba(65, 90, 119, 0.1);
+    margin: 0px 20px;
+    height: 30px;
+    border-radius: 10px;
+  }
+
+  .header-st-right {
+    display: flex;
+    gap: 10px;
+  }
+
+  .header-st-si {
+    background-color: #fff;
+    border: none;
+    color: #000;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .header-st-su {
+    background-color: #1b4de1;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    .header-shortcuts {
+      display: none;
+    }
+  }
+</style>

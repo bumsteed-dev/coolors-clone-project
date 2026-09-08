@@ -1,0 +1,25 @@
+---
+interface Props {
+  size?: string | number;
+  class?: string;
+}
+
+const { size = "1em", class: className } = Astro.props;
+const base = typeof size === "number" ? `${size}px` : size;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  class={className}
+  style={`width: var(--icon-size, ${base}); height: var(--icon-size, ${base});`}
+>
+  <path d="M0 0h24v24H0z" fill="none"></path>
+  <path
+    fill="none"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    d="m6 10l6 6l6-6"></path>
+</svg>

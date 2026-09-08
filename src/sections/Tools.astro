@@ -1,0 +1,33 @@
+---
+
+---
+
+<div class="tools">
+  <div class="tools-left">
+    Press the spacebar to generate color palettes!
+  </div>
+  <div class="tools-right"></div>
+</div>
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .tools {
+    height: 55px;
+    padding: 0px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 0.1px solid #eaeaea;
+  }
+
+  .tools-left {
+    color: #0a0a0a80;
+  }
+
+  @media screen and (max-width: 768px) {
+    .tools {
+      display: none;
+    }
+  }
+</style>
