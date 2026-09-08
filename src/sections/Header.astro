@@ -1,9 +1,21 @@
 ---
 import IconChevronDown from "../icons/IconChevronDown.astro";
+import IconGitHub from "../icons/IconGitHub.astro";
 ---
 
 <div class="header">
-  <div class="header-logo">colorya</div>
+  <div class="header-logo">
+    <a href="/">colorya</a>
+    <a
+      href="https://github.com/bumsteed-dev/coolors-clone-project"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="header-git"
+    >
+      <IconGitHub />
+      Learning Project</a
+    >
+  </div>
   <div class="header-shortcuts">
     <div class="header-st-left">
       <div class="header-st-tool">
@@ -28,6 +40,10 @@ import IconChevronDown from "../icons/IconChevronDown.astro";
 <style lang="scss">
   @use "../styles/mixins" as *;
 
+  a {
+    text-decoration: none;
+  }
+
   span {
     @include flex-center;
   }
@@ -45,6 +61,27 @@ import IconChevronDown from "../icons/IconChevronDown.astro";
     font-size: 30px;
     font-weight: 700;
     color: #1b4de1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .header-git {
+    color: #0a0a0a80;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: ease-in-out 0.2s;
+  }
+
+  .header-git:hover {
+    color: #000000a8;
   }
 
   .header-shortcuts {
