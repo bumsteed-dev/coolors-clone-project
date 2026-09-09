@@ -5,7 +5,7 @@ import IconGitHub from "../icons/IconGitHub.astro";
 
 <div class="header">
   <div class="header-logo">
-    <a href="/">colorya</a>
+    <a class="logo" href="/">colorya</a>
     <a
       href="https://github.com/bumsteed-dev/coolors-clone-project"
       target="_blank"
@@ -57,6 +57,13 @@ import IconGitHub from "../icons/IconGitHub.astro";
   }
 
   .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .logo {
     font-family: "Urbanist", sans-serif;
     font-size: 30px;
     font-weight: 700;
@@ -138,6 +145,12 @@ import IconGitHub from "../icons/IconGitHub.astro";
   @media screen and (max-width: 768px) {
     .header-shortcuts {
       display: none;
+    }
+
+    .header-logo {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
   }
 </style>
