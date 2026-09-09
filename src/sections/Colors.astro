@@ -13,7 +13,8 @@ import IconCopy from "../icons/IconCopy.astro";
         <div class="color">
           <div class="color-icons">
             <span class="color-copy">
-              <IconCopy class="icon-color" size={24} />
+              <div class="icon-badge">Copy HEX</div>
+              <IconCopy class="icon-color" size={22} />
             </span>
           </div>
           <p class="color_code" />
@@ -64,6 +65,37 @@ import IconCopy from "../icons/IconCopy.astro";
     cursor: pointer;
   }
 
+  .color-copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 10px;
+    transition: ease-in-out 0.2s;
+    position: relative;
+  }
+
+  .color-copy:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .color-copy:hover .icon-badge {
+    opacity: 1;
+  }
+
+  .icon-badge {
+    position: absolute;
+    width: max-content;
+    top: -50px;
+    opacity: 0;
+    transition: ease-in 0.2s;
+    background-color: #1b2021;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #fff;
+    pointer-events: none;
+  }
+
   .color_code {
     font-size: 35px;
     padding-bottom: 90px;
@@ -110,6 +142,20 @@ import IconCopy from "../icons/IconCopy.astro";
       display: flex;
       gap: 10px;
       display: block;
+    }
+
+    .icon-badge {
+      position: absolute;
+      width: max-content;
+      top: -50px;
+      opacity: 0;
+      transition: ease-in 0.2s;
+      background-color: #1b2021;
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: #fff;
+      pointer-events: none;
+      display: none;
     }
   }
 </style>
