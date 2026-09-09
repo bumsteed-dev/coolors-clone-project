@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://colorya.bumsteed.site/sitemap-index.xml
