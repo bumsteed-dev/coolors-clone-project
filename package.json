@@ -1,6 +1,6 @@
 {
   "name": "coolors-clone-project",
-  "version": "3.7.1",
+  "version": "3.8.0",
   "description": "Clon educativo de coolors.co para practicar JavaScript, DOM y UI. Proyecto de práctica sin fines de lucro.",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   "author": "Jesús Cedeño Vélez",
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
-    "astro": "^7.2.10"
+    "astro": "^7.3.2"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.4",
