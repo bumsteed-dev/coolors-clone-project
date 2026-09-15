@@ -1,0 +1,70 @@
+---
+import { shortcuts } from "../data/shortcuts";
+---
+
+<div class="color-icons">
+  {
+    shortcuts.map(({ icon: Icon, badge, class: classIcon }) => (
+      <span class={`class-icon ${classIcon}`}>
+        <div class="badge">{badge}</div>
+        <Icon class="icon-color" size={20} />
+      </span>
+    ))
+  }
+</div>
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .class-icon {
+    @include flex-center;
+    flex-direction: column;
+    position: relative;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 8px;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+  }
+
+  :global(.color:hover) .class-icon {
+    opacity: 1;
+  }
+
+  .class-icon:hover {
+    background-color: #1a1a1838;
+    border-radius: 5px;
+  }
+
+  .badge {
+    display: none;
+    position: absolute;
+    width: max-content;
+    top: -50px;
+    background-color: #1a1a18;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+
+  .icon-color {
+    cursor: pointer;
+  }
+
+  .class-icon:hover .badge {
+    display: block;
+  }
+
+  @media screen and (max-width: 768px) {
+    .color-icons {
+      display: flex;
+    }
+
+    .remove-color,
+    .check-contrast,
+    .view-shades,
+    .save-color {
+      display: none;
+    }
+  }
+</style>
