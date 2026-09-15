@@ -1,6 +1,6 @@
 const btnRandom = document.querySelector(".btn-random");
 const colorColumn = document.querySelectorAll(".color");
-const btnCopy = document.querySelectorAll(".color-copy");
+const btnCopy = document.querySelectorAll(".copy-hex");
 const badgeCopy = document.querySelector(".copy-clipboard-ready");
 
 const generateColor = () => {
@@ -47,7 +47,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 colorColumn.forEach((color) => { 
-  const btnCopyColor = color.querySelector(".color-copy");
+  const btnCopyColor = color.querySelector(".copy-hex");
 
   btnCopyColor.addEventListener('click', (e) => {
     const colorCode = color.querySelector('.color_code');
