@@ -1,6 +1,6 @@
 # Colorya — Coolors Clone Project
 
-**Versión 3.8** · Proyecto de práctica personal
+**Versión 3.9** · Proyecto de práctica personal
 
 Colorya es un clon educativo de [coolors.co](https://coolors.co), construido para practicar JavaScript, manipulación del DOM y diseño de interfaz (UI). Este repositorio (`coolors-clone-project`) no tiene fines de lucro, no pretende sustituir ni competir con el servicio original, y todo el crédito conceptual del generador de paletas de colores es de coolors.co.
 
