@@ -1,6 +1,6 @@
 # Colorya — Coolors Clone Project
 
-**Versión 3.1** · Proyecto de práctica personal
+**Versión 3.8** · Proyecto de práctica personal
 
 Colorya es un clon educativo de [coolors.co](https://coolors.co), construido para practicar JavaScript, manipulación del DOM y diseño de interfaz (UI). Este repositorio (`coolors-clone-project`) no tiene fines de lucro, no pretende sustituir ni competir con el servicio original, y todo el crédito conceptual del generador de paletas de colores es de coolors.co.
 
@@ -20,32 +20,39 @@ Este proyecto **no busca**:
 - Cálculo automático de contraste: el texto del código HEX cambia a blanco o negro según la luminancia del color de fondo.
 - Regenerar la paleta con el botón **Random**.
 - Regenerar la paleta con la barra espaciadora.
+- Copiar el código HEX al portapapeles con un clic, con badge de confirmación "Copied!".
+- Panel de atajos/acciones por color (`ShortCuts`) con tooltips: eliminar color, ver contraste, ver tonalidades, guardar color, arrastrar, copiar HEX, ver info del color y bloquear/desbloquear — **de momento solo "Copiar HEX" tiene lógica funcional; el resto son botones de interfaz aún sin comportamiento** (ver Hoja de ruta).
+- SEO básico (metadatos, favicons, `site.webmanifest`) y analítica con Vercel Analytics.
 - Diseño responsivo: la paleta se apila verticalmente en pantallas pequeñas.
 
 ## Hoja de ruta
 
-Ruta de implementación sugerida en [`docs/hoja-de-ruta.md`](docs/hoja-de-ruta.md), pensada para ir agregando funcionalidad de forma incremental:
+Ruta de implementación sugerida en [`docs/hoja-de-ruta.md`](docs/hoja-de-ruta.md), pensada para ir agregando funcionalidad de forma incremental. **Nota:** ese documento aún no refleja el estado actual (marca "Copiar HEX" y "mensaje Copied!" como pendientes cuando ya están implementados); conviene actualizarlo también.
 
 | # | Funcionalidad | Estado |
 |---|---|---|
 | 1 | Contraste automático blanco/negro | ✅ Hecho |
-| 2 | Copiar HEX al hacer clic | ⏳ Pendiente |
-| 3 | Mostrar mensaje "Copied!" | ⏳ Pendiente |
-| 4 | Bloquear un color 🔒 | ⏳ Pendiente |
+| 2 | Copiar HEX al hacer clic | ✅ Hecho |
+| 3 | Mostrar mensaje "Copied!" | ✅ Hecho |
+| 4 | Bloquear un color 🔒 | ⏳ Pendiente (icono/tooltip listo, sin lógica) |
 | 5 | Randomizar solo los colores desbloqueados | ⏳ Pendiente |
 | 6 | Botón individual para cambiar un color | ⏳ Pendiente |
-| 7 | Eliminar una columna | ⏳ Pendiente |
+| 7 | Eliminar una columna | ⏳ Pendiente (icono/tooltip listo, sin lógica) |
 | 8 | Agregar una columna | ⏳ Pendiente |
-| 9 | Mostrar HEX / RGB / HSL | ⏳ Pendiente |
-| 10 | Guardar paletas favoritas (localStorage) | ⏳ Pendiente |
+| 9 | Mostrar HEX / RGB / HSL | ⏳ Pendiente (icono "info" listo, sin lógica) |
+| 10 | Guardar paletas favoritas (localStorage) | ⏳ Pendiente (icono "corazón" listo, sin lógica) |
 | 11 | Historial de paletas | ⏳ Pendiente |
 | 12 | Recuperar paleta al recargar | ⏳ Pendiente |
+| 13 | Ver tonalidades (shades) de un color | ⏳ Pendiente (icono/tooltip listo, sin lógica) |
+| 14 | Reordenar colores por arrastre (drag) | ⏳ Pendiente (icono/tooltip listo, sin lógica) |
 
 ## Stack tecnológico
 
 - [Astro](https://astro.build) — estructura y build del sitio
 - JavaScript vanilla — toda la lógica de generación de colores y eventos
+- Sass/SCSS (`sass-embedded`) — estilos de los componentes Astro
 - HTML5 / CSS3
+- [Vercel Analytics](https://vercel.com/docs/analytics) — analítica del sitio
 - [pnpm](https://pnpm.io) como gestor de paquetes
 
 ## Estructura del proyecto
@@ -56,10 +63,16 @@ coolors-clone-project/
 │   ├── hoja-de-ruta.md       # Ruta de implementación sugerida
 │   └── teoria-del-color.md   # Teoría del color y espacio HSL
 ├── public/
-│   └── app.js                # Lógica principal (generación de color, contraste, eventos)
+│   ├── app.js                # Lógica principal (generación de color, contraste, copiar HEX)
+│   └── favicons, manifest, og-image, robots.txt
 ├── src/
-│   ├── components/           # Botones (Random, Space)
-│   ├── icons/                # Iconos usados por los botones
+│   ├── components/           # RandomButton, SpaceBarButton, ShortCuts, CopyClipboardReady, SEO
+│   ├── data/
+│   │   └── shortcuts.ts      # Definición de los atajos/acciones por color
+│   ├── icons/                # Iconos generales y de shortcuts (shades, lock, heart, drag, etc.)
+│   ├── sections/              # Header, Colors, Tools
+│   ├── styles/
+│   │   └── _mixins.scss
 │   └── pages/
 │       └── index.astro       # Página principal
 ├── index.html                # Versión estática original (sin Astro)
