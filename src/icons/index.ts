@@ -1,3 +1,4 @@
+// UI icons
 export { default as IconRandom } from './IconRandom.astro';
 export { default as IconSpaceBar } from './IconSpaceBar.astro';
 export { default as IconCheckCircle } from './IconCheckCircle.astro';
