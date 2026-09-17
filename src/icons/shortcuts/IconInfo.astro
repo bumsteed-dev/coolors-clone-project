@@ -10,17 +10,16 @@ const base = typeof size === "number" ? `${size}px` : size;
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 1024 1024"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
   class={className}
   style={`width: var(--icon-size, ${base}); height: var(--icon-size, ${base});`}
 >
-  <path d="M0 0h1024v1024H0z" fill="none"></path>
-  <path
-    fill="currentColor"
-    d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372s372 166.6 372 372s-166.6 372-372 372"
-  ></path>
-  <path
-    fill="currentColor"
-    d="M464 336a48 48 0 1 0 96 0a48 48 0 1 0-96 0m72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8"
-  ></path>
+  <circle cx="12" cy="12" r="9"></circle>
+  <path d="M12 8h.01"></path>
+  <path d="M11 12h1v4h1"></path>
 </svg>
