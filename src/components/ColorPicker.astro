@@ -1,0 +1,51 @@
+---
+
+---
+
+<div class="change-color" id="change-color">
+  <div class="input-color"></div>
+  <input class="color-range" type="range" min="0" max="360" value="180" />
+  <div class="hex-input">
+    <input class="hex-value" type="text" value="#605F5E" />
+    <input class="hex-color" type="color" value="#605F5E" />
+  </div>
+</div>
+
+<style>
+  .change-color {
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: 275px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .cc-active {
+    display: block;
+  }
+
+  .input-color {
+    width: 100%;
+    height: 150px;
+    border: 0.1px solid #000;
+    border-radius: 15px;
+  }
+
+  .color-range {
+    width: 100%;
+  }
+
+  .hex-input {
+  }
+</style>
