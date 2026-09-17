@@ -45,6 +45,7 @@ import { shortcuts } from "../data/shortcuts";
     color: white;
     padding: 10px 15px;
     border-radius: 10px;
+    transition: ease-in-out 0.2s;
   }
 
   .icon-color {
@@ -56,6 +57,10 @@ import { shortcuts } from "../data/shortcuts";
   }
 
   @media screen and (max-width: 768px) {
+    .class-icon {
+      opacity: 1;
+    }
+
     .color-icons {
       display: flex;
     }
@@ -64,6 +69,10 @@ import { shortcuts } from "../data/shortcuts";
     .check-contrast,
     .view-shades,
     .save-color {
+      display: none;
+    }
+
+    .badge {
       display: none;
     }
   }
