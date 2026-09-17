@@ -46,16 +46,22 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-colorColumn.forEach((color) => { 
+colorColumn.forEach((color) => {
   const btnCopyColor = color.querySelector(".copy-hex");
+  const changeColor = color.querySelector(".change-color");
+  const colorCode = color.querySelector('.color_code');
 
   btnCopyColor.addEventListener('click', (e) => {
-    const colorCode = color.querySelector('.color_code');
     navigator.clipboard.writeText(`#${colorCode.textContent}`);
     badgeCopy.classList.add("is-visible");
 
     setTimeout(() => {
       badgeCopy.classList.remove("is-visible");
     }, 2000);
+  });
+
+  colorCode.addEventListener("click", () => {
+    console.log("Click en color para editar");
+    changeColor.classList.toggle("cc-active");
   });
 });
