@@ -3,8 +3,8 @@ const cantidad = 5;
 const columnas = Array.from({ length: cantidad });
 
 import RandonButton from "../components/RandonButton.astro";
-
 import ShortCuts from "../components/ShortCuts.astro";
+import ColorPicker from "../components/ColorPicker.astro";
 ---
 
 <div class="main_container">
@@ -13,7 +13,11 @@ import ShortCuts from "../components/ShortCuts.astro";
       columnas.map(() => (
         <div class="color">
           <ShortCuts />
-          <p class="color_code" />
+          <div class="color-text-cont">
+            <ColorPicker />
+            <p class="color_code" />
+            <div class="badge">Change color</div>
+          </div>
         </div>
       ))
     }
@@ -24,6 +28,8 @@ import ShortCuts from "../components/ShortCuts.astro";
 </div>
 
 <style lang="scss">
+  @use "../styles/mixins" as *;
+
   .main_container {
     display: flex;
     flex-direction: column;
@@ -48,9 +54,37 @@ import ShortCuts from "../components/ShortCuts.astro";
     gap: 10px;
   }
 
+  .color-text-cont {
+    position: relative;
+    @include flex-center;
+  }
+
+  .badge {
+    opacity: 0;
+    position: absolute;
+    width: max-content;
+    top: -20px;
+    background-color: #1a1a18;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: ease-in-out 0.2s;
+  }
+
   .color_code {
     font-size: 35px;
-    padding-bottom: 90px;
+    margin-bottom: 90px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .color_code:hover {
+    background-color: #1a1a1838;
+    border-radius: 10px;
+  }
+
+  .color_code:hover + .badge {
+    opacity: 1;
   }
 
   .controls {
@@ -80,6 +114,12 @@ import ShortCuts from "../components/ShortCuts.astro";
       padding: 30px;
     }
 
+    .color-text-cont {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .color-icons {
       display: block;
     }
@@ -87,6 +127,11 @@ import ShortCuts from "../components/ShortCuts.astro";
     .color_code {
       font-size: 25px;
       padding: 0;
+      margin: 0;
+    }
+
+    .badge {
+      display: none;
     }
 
     .controls {
