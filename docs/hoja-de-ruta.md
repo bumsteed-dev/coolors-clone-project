@@ -5,14 +5,18 @@ Ruta recomendada para ir agregando funcionalidad a **Colorya** de forma incremen
 ## 1. Fundamentos de color y DOM
 
 - [x] **Contraste automático blanco/negro** — funciones, strings, números, condiciones
-- [ ] **Copiar HEX al hacer clic** — eventos + Clipboard API
-- [ ] **Mostrar mensaje "Copied!"** — crear/modificar elementos, clases
+- [x] **Copiar HEX al hacer clic** — eventos + Clipboard API
+- [x] **Mostrar mensaje "Copied!"** — crear/modificar elementos, clases
 
 ## 2. Control por color individual
+
+> El panel de atajos (`ShortCuts` / `src/data/shortcuts.ts`) ya tiene íconos y tooltips para bloquear, eliminar, ver tonalidades, guardar e info — falta la lógica en `app.js` para cada uno.
 
 - [ ] **Bloquear un color** 🔒 — estado + DOM
 - [ ] **Randomizar solo los colores desbloqueados** — condiciones + atributos/clases
 - [ ] **Botón individual para cambiar un color** — eventos por elemento
+- [ ] **Ver tonalidades (shades) de un color** — generar variaciones + UI
+- [ ] **Reordenar colores por arrastre (drag)** — Drag and Drop API
 
 ## 3. Columnas dinámicas
 
