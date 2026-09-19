@@ -60,7 +60,7 @@ colorColumn.forEach((color) => {
     }, 2000);
   });
 
-  colorCode.addEventListener("click", () => {
+  colorCode.addEventListener("click", (e) => {
     console.log("Click en color para editar");
     changeColor.classList.toggle("cc-active");
   });
